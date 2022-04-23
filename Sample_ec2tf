@@ -1,0 +1,14 @@
+provider "aws" {
+  access_key = "##############"
+  secret_key = "###########"
+  region = "us-east-1"
+}
+resource "aws_instance" "ec2tf" {
+  ami = "ami-0f9fc25dd2506cf6d"
+  instance_type = "t2.micro"
+  key_name = "vprofile-key"
+  #security_groups = "terraform"
+  tags = {
+      Name = "terraform server"
+  }
+}
